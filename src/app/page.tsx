@@ -1,6 +1,7 @@
 import Product from "@/components/items/Product";
 import Image from "next/image";
-import { FaChevronRight, FaRocket } from "react-icons/fa";
+import { FaChevronRight, FaPhone, FaQuoteRight, FaRocket, FaTelegramPlane } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const page = () => {
   return (
@@ -79,6 +80,96 @@ const page = () => {
         <Product />
         <Product />
         <Product />
+      </div>
+
+      <div className="my-10">
+        <p className="bg-purple-500 font-medium px-6 py-2 rounded-xl text-black capitalize w-fit mx-auto">our testimonial</p>
+        <p className="font-medium capitalize text-center text-3xl my-4">customer say about our service</p>
+
+        <div className="flex items-center gap-7 md:gap-3 h-full md:flex-row flex-col">
+          <div className="relative lg:size-80">
+            {/* <img src="" alt="" /> */}
+            {/* <div className="size-80 bg-white/10 rounded-xl"></div> */}
+            <Image src={'https://img.freepik.com/free-vector/hand-drawn-nft-style-ape-illustration_23-2149622021.jpg'} width={500} height={500} alt="Cloud" className="md:size-80 object-cover rounded-xl" />
+
+            <div className="absolute backdrop-blur-2xl border border-white/30 cursor-pointer -bottom-4 left-[50%] -translate-x-[50%] bg-white/10 rounded-xl p-2 flex items-center px-5">
+              <p>View</p>
+            </div>
+          </div>
+          <div className="bg-purple-700 md:h-80 flex flex-col justify-center p-4 rounded-xl w-full h-full">
+            <div className="flex justify-between items-center">
+              <FaQuoteRight className="text-3xl" />
+              <div className="from-transparent via-white/30 to-transparent bg-gradient-to-l p-1">
+                <div className="rating rating-md">
+                  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                  <input
+                    type="radio"
+                    name="rating-7"
+                    className="mask mask-star-2 bg-orange-400"
+                    defaultChecked />
+                  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                  <input type="radio" name="rating-7" className="mask mask-star-2 bg-orange-400" />
+                </div>
+              </div>
+            </div>
+            <p className="my-5 md:line-clamp-6 lg:line-clamp-none line-clamp-4">      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur facere, quam explicabo nesciunt eos possimus illum pariatur nemo! Accusamus totam in dicta, quo perferendis inventore magni beatae provident. Saepe maxime harum consectetur inventore, accusamus corporis facilis, ipsam quisquam fugiat eaque, laborum expedita dolorum! Consequatur eum eius, velit distinctio beatae perferendis.
+            </p>
+            <div className="flex items-center gap-3">
+              <div className="size-10 bg-white/10 rounded-full"></div>
+              <div className="">
+                <p className="text-white font-medium">Siam Sheikh</p>
+                <p className="text-white/60">User</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-10">
+        <p className="text-3xl capitalize font-medium text-center">get in touch</p>
+        <p className="md:w-1/2 text-white/60 mx-auto text-center">Contact the team if you have any questions, want to hire a development team, or need anything else. Come on and reach out!</p>
+        <div className="bg-white/10 p-2 rounded-xl flex  gap-2 mt-5">
+          <div className="bg-purple-500 p-3 rounded-xl flex-[0.3]">
+            <p className="text-black text-xl font-medium">Contact Informission</p>
+            <p className="text-black/60">Contact us and let's collaborate!</p>
+            <div className="flex items-center gap-3 text-black my-3">
+              <FaTelegramPlane className="text-2xl" />
+              <p className="text-md">@siam</p>
+            </div>
+            <div className="flex items-center gap-3 text-black my-3">
+              <MdEmail className="text-2xl" />
+              <p className="text-md">email@siam.com</p>
+            </div>
+            <div className="flex items-center gap-3 text-black my-3">
+              <FaPhone className="text-2xl" />
+              <p className="text-md">+880 1636446338</p>
+            </div>
+          </div>
+          <div className="w-full p-5 flex-[0.7]">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex flex-col flex-1">
+                <label className="text-xs text-white/70">Name</label>
+                <input type="text" className="bg-transparent outline-none border-b text-white" />
+              </div>
+              <div className="flex flex-col flex-1">
+                <label className="text-xs text-white/70">Name</label>
+                <input type="text" className="bg-transparent outline-none border-b text-white" />
+              </div>
+            </div>
+            <div className="flex flex-col my-3">
+              <label className="text-xs text-white/70">Name</label>
+              <input type="text" className="bg-transparent outline-none border-b text-white" />
+            </div>
+
+            <div className="flex flex-col my-3">
+              <label className="text-xs text-white/70">Messsage</label>
+              <textarea  className="bg-transparent outline-none border-b text-white" />
+            </div>
+
+            <button className="bg-purple-500 text-black px-5 py-2 font-medium rounded-xl">Send Message</button>
+          </div>
+        </div>
       </div>
     </div>
   );

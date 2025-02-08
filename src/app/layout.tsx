@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import {  Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export default function RootLayout({
         <div className="max-w-[1200px] mx-auto p-3 lg:p-0">
           {children}
         </div>
+        <Footer />
       </body>
     </html>
   );
