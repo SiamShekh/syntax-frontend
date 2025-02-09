@@ -1,24 +1,29 @@
 import Link from "next/link";
 import { CiShoppingTag } from "react-icons/ci";
-import { FaTelegramPlane } from "react-icons/fa";
+import { FaHome, FaTelegramPlane } from "react-icons/fa";
 import { FaBloggerB, FaShop } from "react-icons/fa6";
 import { MdOutlineManageAccounts, MdOutlineMenu } from "react-icons/md";
 
 const Navbar = () => {
     const menu = [
         {
+            title: "Home",
+            href: "/",
+            icon: <FaHome className="text-2xl"/>
+        },
+        {
             title: "Marketplace",
-            href: "#",
+            href: "/marketplace",
             icon: <CiShoppingTag className="text-2xl"/>
         },
         {
             title: "Blog",
-            href: "#",
+            href: "/blog",
             icon: <FaBloggerB className="text-2xl"/>
         },
         {
             title: "Telegram",
-            href: "#",
+            href: "t.me/example",
             icon: <FaTelegramPlane className="text-2xl"/>
         },
     ]

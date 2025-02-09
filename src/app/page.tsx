@@ -149,16 +149,16 @@ const page = () => {
           <div className="w-full p-5 flex-[0.7]">
             <div className="flex items-center justify-between gap-3">
               <div className="flex flex-col flex-1">
-                <label className="text-xs text-white/70">Name</label>
+                <label className="text-xs text-white/70">First Name</label>
                 <input type="text" className="bg-transparent outline-none border-b text-white" />
               </div>
               <div className="flex flex-col flex-1">
-                <label className="text-xs text-white/70">Name</label>
+                <label className="text-xs text-white/70">Last Name</label>
                 <input type="text" className="bg-transparent outline-none border-b text-white" />
               </div>
             </div>
             <div className="flex flex-col my-3">
-              <label className="text-xs text-white/70">Name</label>
+              <label className="text-xs text-white/70">Email</label>
               <input type="text" className="bg-transparent outline-none border-b text-white" />
             </div>
 
