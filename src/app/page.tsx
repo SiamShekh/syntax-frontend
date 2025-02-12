@@ -129,30 +129,31 @@ const page = () => {
       <div className="mt-10">
         <p className="text-3xl capitalize font-medium text-center">get in touch</p>
         <p className="md:w-1/2 text-white/60 mx-auto text-center">Contact the team if you have any questions, want to hire a development team, or need anything else. Come on and reach out!</p>
-        <div className="bg-white/10 p-2 rounded-xl flex  gap-2 mt-5">
-          <div className="bg-purple-500 p-3 rounded-xl flex-[0.3]">
-            <p className="text-black text-xl font-medium">Contact Informission</p>
-            <p className="text-black/60">Contact us and let's collaborate!</p>
-            <div className="flex items-center gap-3 text-black my-3">
+        <div className="bg-white/10 p-2 rounded-xl flex  gap-2 mt-5 flex-col md:flex-row">
+          <div className="bg-[#004D03] p-3 rounded-xl flex-[0.3]">
+            <p className="text-white text-xl font-medium">Contact Informission</p>
+            <p className="text-white/50 text-xs">Contact us and let's collaborate!</p>
+            <div className="flex items-center gap-1 text-white my-3">
               <FaTelegramPlane className="text-2xl" />
-              <p className="text-md">@siam</p>
+              <p className="text-sm text-white/70">@siam</p>
             </div>
-            <div className="flex items-center gap-3 text-black my-3">
+            <div className="flex items-center gap-1 text-white my-3">
               <MdEmail className="text-2xl" />
-              <p className="text-md">email@siam.com</p>
+              <p className="text-sm text-white/70">email@siam.com</p>
             </div>
-            <div className="flex items-center gap-3 text-black my-3">
+            <div className="flex items-center gap-1 text-white my-3">
               <FaPhone className="text-2xl" />
-              <p className="text-md">+880 1636446338</p>
+              <p className="text-sm text-white/70">+880 1636446338</p>
             </div>
+            <p className="text-white/50">Contact me through any social media for the fastest response. You can also reach me via email, phone, or Telegram.</p>
           </div>
           <div className="w-full p-5 flex-[0.7]">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex flex-col flex-1">
+            <div className="flex items-center justify-between gap-3 flex-col w-full md:flex-row">
+              <div className="flex flex-col flex-1 w-full ">
                 <label className="text-xs text-white/70">First Name</label>
                 <input type="text" className="bg-transparent outline-none border-b text-white" />
               </div>
-              <div className="flex flex-col flex-1">
+              <div className="flex flex-col flex-1 w-full">
                 <label className="text-xs text-white/70">Last Name</label>
                 <input type="text" className="bg-transparent outline-none border-b text-white" />
               </div>
@@ -167,7 +168,7 @@ const page = () => {
               <textarea  className="bg-transparent outline-none border-b text-white" />
             </div>
 
-            <button className="bg-purple-500 text-black px-5 py-2 font-medium rounded-xl">Send Message</button>
+            <button className="bg-[#740774] text-white px-5 py-2 font-medium rounded-xl">Send Message</button>
           </div>
         </div>
       </div>
