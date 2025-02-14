@@ -53,7 +53,7 @@ function register() {
                         <div className="divider my-5">OR</div>
                         <button className="px-6 py-2 bg-white/10 rounded-md w-full">Login</button>
                         <div className="text-center mt-3">
-                            <Link href={'#'}>Already have an account? <span className="font-medium text-red-500">Sign up</span></Link>
+                            <Link href={'/login'}>Already have an account? <span className="font-medium text-red-500">Sign In</span></Link>
                         </div>
 
                         <div className="flex justify-center items-center mt-10 gap-5">

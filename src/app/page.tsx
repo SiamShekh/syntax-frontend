@@ -145,7 +145,7 @@ const page = () => {
               <FaPhone className="text-2xl" />
               <p className="text-sm text-white/70">+880 1636446338</p>
             </div>
-            <p className="text-white/50">Contact me through any social media for the fastest response. You can also reach me via email, phone, or Telegram.</p>
+            <p className="text-white/50 text-xs mt-8">Contact me through any social media for the fastest response. You can also reach me via email, phone, or Telegram.</p>
           </div>
           <div className="w-full p-5 flex-[0.7]">
             <div className="flex items-center justify-between gap-3 flex-col w-full md:flex-row">

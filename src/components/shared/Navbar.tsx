@@ -43,9 +43,9 @@ const Navbar = () => {
                         ))
                     }
 
-                    <button className="font-medium bg-purple-500 px-4 py-2 rounded-md flex items-center gap-2">
-                        <MdOutlineManageAccounts className="text-xl" /> Sign up
-                    </button>
+                    <Link href={'/register'} className="font-medium bg-purple-500 px-4 py-2 rounded-md flex items-center gap-2">
+                            <MdOutlineManageAccounts className="text-xl" /> Sign up
+                    </Link>
                 </div>
 
                 <div className="md:hidden">
