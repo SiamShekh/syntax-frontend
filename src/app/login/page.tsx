@@ -80,6 +80,7 @@ function login() {
                         <button className="px-6 py-2 border rounded-md mt-4 w-full capitalize flex items-center gap-2 justify-center">Login with google <FaGoogle /></button>
                         <div className="divider my-5">OR</div>
                         <button type="submit" className="px-6 py-2 bg-white/10 rounded-md w-full">Login</button>
+                        
                         <div className="text-center mt-3">
                             <Link href={'/register'}>Don't have an account? <span className="font-medium text-red-500">Sign up</span></Link>
                         </div>
