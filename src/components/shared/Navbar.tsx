@@ -1,11 +1,19 @@
+"use client";
+
 import Link from "next/link";
 import { CiShoppingTag } from "react-icons/ci";
 import { FaHome, FaTelegramPlane } from "react-icons/fa";
 import { FaBloggerB, FaShop } from "react-icons/fa6";
 import { MdDashboard, MdOutlineManageAccounts, MdOutlineMenu } from "react-icons/md";
 import NavItemMobile from "../ui/NavItemMobile";
+import { cookies } from "next/headers";
+import { getCurrentUser } from "@/utils/getCurrentUser";
+import { useLogout } from "@/utils/useLogout";
+import { useContext } from "react";
+import { SyntaxProvider } from "@/utils/Context";
 
 const Navbar = () => {
+
     const menu = [
         {
             title: "Dashboard",
@@ -34,6 +42,8 @@ const Navbar = () => {
         },
     ]
 
+    const val = useContext(SyntaxProvider);
+
     return (
         <div className="h-16 backdrop-blur-sm bg-black/10 border-b flex justify-center items-center fixed top-0 left-[50%] -translate-x-[50%] w-full z-50">
             <div className="max-w-[1200px] w-full flex justify-between items-center px-5">
@@ -47,10 +57,18 @@ const Navbar = () => {
                             <Link href={menu?.href} key={i} className="font-medium text-sm">{menu?.title}</Link>
                         ))
                     }
-
-                    <Link href={'/register'} className="font-medium bg-purple-500 px-4 py-2 rounded-md flex items-center gap-2">
-                        <MdOutlineManageAccounts className="text-xl" /> Sign up
-                    </Link>
+                    {
+                        val?.user?.id ?
+                            <button onClick={async()=>{
+                                await useLogout();
+                                val.setLoading(true);
+                            }} className="font-medium bg-[#870D0D] text-white px-4 py-2 rounded-md flex items-center gap-2">
+                                <MdOutlineManageAccounts className="text-xl" /> Logout
+                            </button> :
+                            <Link href={'/register'} className="font-medium bg-purple-500 px-4 py-2 rounded-md flex items-center gap-2">
+                                <MdOutlineManageAccounts className="text-xl" /> Sign up
+                            </Link>
+                    }
                 </div>
 
                 <div className="md:hidden">

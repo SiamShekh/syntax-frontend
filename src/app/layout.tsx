@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { Toaster } from 'sonner';
+import Context from "@/utils/Context";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -25,7 +26,9 @@ export default function RootLayout({
       >
         <div>
           <Toaster />
-          {children}
+          <Context>
+            {children}
+          </Context>
         </div>
       </body>
     </html>

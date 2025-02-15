@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { jwtDecode } from 'jwt-decode';
 
-interface decode {
+export interface payloadUser {
     id: string
     email: string
     role: "user" | "admin"
@@ -12,7 +12,7 @@ interface decode {
 
 const path = {
     user: ["/dashboard"],
-    admin: ["/admin"],
+    admin: ["/admin/:path*"],
     auth: ["/register", "/login"]
 }
 
@@ -28,7 +28,7 @@ export async function middleware(request: NextRequest) {
         }
     }
 
-    const decode: decode = await jwtDecode(token as string);
+    const decode: payloadUser = await jwtDecode(token as string);
 
     const accessPath = path[decode.role];
 
@@ -43,6 +43,7 @@ export const config = {
     matcher: [
         "/dashboard",
         "/register",
-        "/login"
+        "/login",
+        "/admin/:path*"
     ],
 }
