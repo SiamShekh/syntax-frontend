@@ -10,6 +10,8 @@
 !.yarn/releases
 !.yarn/versions
 
+src/environment.ts
+
 # testing
 /coverage
 
