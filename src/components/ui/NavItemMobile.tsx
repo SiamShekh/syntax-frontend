@@ -4,10 +4,16 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiShoppingTag } from "react-icons/ci";
 import { FaBloggerB, FaHome, FaTelegramPlane } from "react-icons/fa";
+import { MdDashboard } from "react-icons/md";
 
 function NavItemMobile() {
 
     const menu = [
+        {
+            title: "Dashboard",
+            href: "/dashboard",
+            icon: <MdDashboard className="text-2xl" />
+        },
         {
             title: "Home",
             href: "/",
@@ -31,7 +37,7 @@ function NavItemMobile() {
     ]
 
     const pathName = usePathname();
-    
+
 
     return (
         <div className="px-4">

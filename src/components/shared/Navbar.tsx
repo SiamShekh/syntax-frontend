@@ -2,11 +2,16 @@ import Link from "next/link";
 import { CiShoppingTag } from "react-icons/ci";
 import { FaHome, FaTelegramPlane } from "react-icons/fa";
 import { FaBloggerB, FaShop } from "react-icons/fa6";
-import { MdOutlineManageAccounts, MdOutlineMenu } from "react-icons/md";
+import { MdDashboard, MdOutlineManageAccounts, MdOutlineMenu } from "react-icons/md";
 import NavItemMobile from "../ui/NavItemMobile";
 
 const Navbar = () => {
     const menu = [
+        {
+            title: "Dashboard",
+            href: "/dashboard",
+            icon: <MdDashboard className="text-2xl" />
+        },
         {
             title: "Home",
             href: "/",
@@ -44,7 +49,7 @@ const Navbar = () => {
                     }
 
                     <Link href={'/register'} className="font-medium bg-purple-500 px-4 py-2 rounded-md flex items-center gap-2">
-                            <MdOutlineManageAccounts className="text-xl" /> Sign up
+                        <MdOutlineManageAccounts className="text-xl" /> Sign up
                     </Link>
                 </div>
 

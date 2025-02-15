@@ -1,15 +1,46 @@
+"use client";
+
+import { loginUser } from "@/firebase/user/loginUser";
+import { user } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
 import { FaGoogle, FaTelegramPlane } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { toast } from "sonner";
 
 function login() {
+    const { register, handleSubmit } = useForm<user>({
+        defaultValues: {
+            "email": "Siam62349@gmail.com",
+            "password": "1234"
+        }
+    });
+
+    const router = useRouter();
+
+    const HandleLogin = async (e: user) => {
+        toast.dismiss();
+        toast.loading("Loading");
+
+        const res = await loginUser(e);
+        if (res?.isSuccess) {
+            toast.dismiss();
+            toast.success(res.msg);
+            router.push('/dashboard');
+        } else {
+            toast.dismiss();
+            toast.error(res?.msg);
+        }
+    }
+
     return (
-        <div className="">
-            <div className="bg-white/10 overflow-hidden rounded-xl flex justify-between h-full">
-                <Image src={"https://img.freepik.com/free-vector/hand-drawn-nft-style-ape-illustration_23-2149622024.jpg"} alt="login image" width={100} height={900} className="flex-[0.6] w-full object-cover hidden md:flex" />
+        <div className="max-h-screen min-h-screen relative overflow-hidden ">
+            <div className="bg-white/10 relative min-h-screen overflow-hidden flex justify-between h-full">
+                <Image src={"https://img.freepik.com/free-vector/hand-drawn-nft-style-ape-illustration_23-2149622024.jpg"} alt="login image" width={500} height={500} className="flex-[0.6] w-full object-cover hidden md:flex" />
                 <div className="md:flex-[0.4] p-3 w-full">
-                    <form>
+                    <form onSubmit={handleSubmit(HandleLogin)}>
                         <div className="flex justify-between items-center">
                             <p className="text-xl font-medium">Syntax <span className="text-blue-400 border-b-2">Code</span></p>
 
@@ -39,18 +70,18 @@ function login() {
 
                         <div className="lg:mt-20">
                             <p className="text-xs font-medium my-2">Email</p>
-                            <input type="text" placeholder="Email" className="outline-none bg-transparent border border-white/30 p-2 rounded-md w-full" />
+                            <input type="text" placeholder="Email" {...register("email")} className="outline-none bg-transparent border border-white/30 p-2 rounded-md w-full" />
                         </div>
                         <div className="mt-4">
                             <p className="text-xs font-medium my-2">Password</p>
-                            <input type="text" placeholder="Password" className="outline-none bg-transparent border border-white/30 p-2 rounded-md w-full" />
+                            <input type="text" placeholder="Password" {...register("password")} className="outline-none bg-transparent border border-white/30 p-2 rounded-md w-full" />
                         </div>
                         <Link href={'#'} className="text-red-500 font-bold my-1 text-sm text-end">Forgot Password?</Link>
                         <button className="px-6 py-2 border rounded-md mt-4 w-full capitalize flex items-center gap-2 justify-center">Login with google <FaGoogle /></button>
                         <div className="divider my-5">OR</div>
-                        <button className="px-6 py-2 bg-white/10 rounded-md w-full">Login</button>
+                        <button type="submit" className="px-6 py-2 bg-white/10 rounded-md w-full">Login</button>
                         <div className="text-center mt-3">
-                            <Link href={'#'}>Don't have an account? <span className="font-medium text-red-500">Sign up</span></Link>
+                            <Link href={'/register'}>Don't have an account? <span className="font-medium text-red-500">Sign up</span></Link>
                         </div>
 
                         <div className="flex justify-center items-center mt-10 gap-5">

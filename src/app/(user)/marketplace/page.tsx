@@ -4,15 +4,15 @@ function marketplace() {
     return (
         <div className="">
             <div className="flex justify-between items-center ">
-                <p className="font-medium text-white hidden md:flex">Product: 90</p>
-                <div className="join">
+                <p className="font-medium text-black dark:text-white hidden md:flex">Product: 90</p>
+                <div className="join rounded-xl text-white bg-white">
                     <div>
                         <div>
                             <input className="input input-bordered join-item" placeholder="Search" />
                         </div>
                     </div>
                     <select className="select select-bordered join-item hidden lg:flex">
-                        <option disabled selected>Filter</option>
+                        <option value={"Filter"}>Filter</option>
                         <option>Sci-fi</option>
                         <option>Drama</option>
                         <option>Action</option>

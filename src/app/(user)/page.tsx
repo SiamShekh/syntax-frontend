@@ -8,31 +8,31 @@ const page = () => {
     <div className="">
       <div className="flex justify-between items-center gap-5 flex-col md:flex-row">
         <div className="flex-1">
-          <p className="lg:text-7xl text-3xl font-bold text-white">Discover ready source code</p>
-          <p className="lg:text-2xl mt-5 text-white/50">Get free or paid source code from a platform dedicated exclusively to code selling. It also provides guides and documentation on configuring the code.</p>
+          <p className="lg:text-7xl text-3xl font-bold text-black dark:text-white">Discover ready source code</p>
+          <p className="lg:text-2xl mt-5 text-black dark:text-white/50">Get free or paid source code from a platform dedicated exclusively to code selling. It also provides guides and documentation on configuring the code.</p>
           <div className="hidden md:block">
             <button className="font-medium mt-5 bg-purple-500 px-4 py-2 rounded-md flex items-center gap-2">
               <FaRocket className="text-xl" /> Get start
             </button>
             <div className="grid grid-cols-3 gap-4 mt-5">
-              <div className="flex justify-center items-center flex-col bg-white/10 py-3 rounded-lg">
+              <div className="flex justify-center items-center flex-col dark:bg-white/10 bg-white/10 py-3 rounded-lg">
                 <p className="font-medium text-xl">10k+</p>
-                <p className="lg:text-2xl text-white/60">Total sale</p>
+                <p className="lg:text-2xl dark:text-white/60 text-black/60">Total sale</p>
               </div>
-              <div className="flex justify-center items-center flex-col bg-white/10 py-3 rounded-lg">
+              <div className="flex justify-center items-center flex-col dark:bg-white/10 bg-white/10 py-3 rounded-lg">
                 <p className="font-medium text-xl">100k+</p>
-                <p className="lg:text-2xl text-white/60">Total User</p>
+                <p className="lg:text-2xl dark:text-white/60 text-black/60">Total User</p>
               </div>
-              <div className="flex justify-center items-center flex-col bg-white/10 py-3 rounded-lg">
+              <div className="flex justify-center items-center flex-col dark:bg-white/10 bg-white/10 py-3 rounded-lg">
                 <p className="font-medium text-xl">10k+</p>
-                <p className="lg:text-2xl text-white/60">Customer</p>
+                <p className="lg:text-2xl dark:text-white/60 text-black/60">Customer</p>
               </div>
             </div>
           </div>
 
         </div>
         <div className="flex-1 flex justify-center items-center relative">
-          <div className="bg-white/10 backdrop-blur-md border border-white/30 rounded-2xl w-fit mx-auto relative overflow-hidden z-20">
+          <div className="dark:bg-white/10 bg-black/10 backdrop-blur-md border border-white/30 rounded-2xl w-fit mx-auto relative overflow-hidden z-20">
             <Image src={'https://img.freepik.com/free-vector/hand-drawn-nft-style-ape-illustration_23-2149622021.jpg'} width={300} height={200} alt="Cloud" className="object-cover md:w-60 md:h-48 lg:w-96 lg:h-80" />
             <div className="p-5">
               <p className="text-xl">Space Walking</p>
@@ -43,7 +43,7 @@ const page = () => {
             </div>
           </div>
 
-          <div className="absolute size-64 lg:size-96 bg-blue-600 z-10 blur-2xl"></div>
+          <div className="absolute size-64 lg:size-96 bg-blue-300 dark:bg-blue-600 z-10 blur-2xl"></div>
         </div>
 
         <div className="w-full md:hidden">
@@ -53,22 +53,22 @@ const page = () => {
           <div className="grid grid-cols-3 gap-4 mt-5 justify-between items-center mx-auto">
             <div className="flex justify-center items-center flex-col ">
               <p className="font-medium text-xl">10k+</p>
-              <p className="lg:text-2xl text-white/60">Total sale</p>
+              <p className="lg:text-2xl dark:text-white/60 text-black/60">Total sale</p>
             </div>
             <div className="flex justify-center items-center flex-col">
               <p className="font-medium text-xl">100k+</p>
-              <p className="lg:text-2xl text-white/60">Total User</p>
+              <p className="lg:text-2xl dark:text-white/60 text-black/60">Total User</p>
             </div>
             <div className="flex justify-center items-center flex-col">
               <p className="font-medium text-xl">10k+</p>
-              <p className="lg:text-2xl text-white/60">Customer</p>
+              <p className="lg:text-2xl dark:text-white/60 text-black/60">Customer</p>
             </div>
           </div>
         </div>
       </div>
 
       <div className="flex justify-between items-center mt-10">
-        <p className="font-medium text-white text-xl">Best Products</p>
+        <p className="font-medium dark:text-white text-black text-xl">Best Products</p>
         <div className="flex items-center gap-1">
           View
           <FaChevronRight className="text-xs" />
@@ -128,8 +128,8 @@ const page = () => {
 
       <div className="mt-10">
         <p className="text-3xl capitalize font-medium text-center">get in touch</p>
-        <p className="md:w-1/2 text-white/60 mx-auto text-center">Contact the team if you have any questions, want to hire a development team, or need anything else. Come on and reach out!</p>
-        <div className="bg-white/10 p-2 rounded-xl flex  gap-2 mt-5 flex-col md:flex-row">
+        <p className="md:w-1/2 text-black/60 dark:text-white/60 mx-auto text-center">Contact the team if you have any questions, want to hire a development team, or need anything else. Come on and reach out!</p>
+        <div className="dark:bg-white/10 bg-black/10 p-2 rounded-xl flex  gap-2 mt-5 flex-col md:flex-row">
           <div className="bg-[#004D03] p-3 rounded-xl flex-[0.3]">
             <p className="text-white text-xl font-medium">Contact Informission</p>
             <p className="text-white/50 text-xs">Contact us and let's collaborate!</p>
@@ -150,22 +150,22 @@ const page = () => {
           <div className="w-full p-5 flex-[0.7]">
             <div className="flex items-center justify-between gap-3 flex-col w-full md:flex-row">
               <div className="flex flex-col flex-1 w-full ">
-                <label className="text-xs text-white/70">First Name</label>
-                <input type="text" className="bg-transparent outline-none border-b text-white" />
+                <label className="text-xs text-black/70 dark:text-white/70">First Name</label>
+                <input type="text" className="bg-transparent outline-none border-b border-black text-black dark:text-white" />
               </div>
               <div className="flex flex-col flex-1 w-full">
-                <label className="text-xs text-white/70">Last Name</label>
-                <input type="text" className="bg-transparent outline-none border-b text-white" />
+                <label className="text-xs text-black/70 dark:text-white/70">Last Name</label>
+                <input type="text" className="bg-transparent outline-none border-b border-black text-black dark:text-white" />
               </div>
             </div>
             <div className="flex flex-col my-3">
-              <label className="text-xs text-white/70">Email</label>
-              <input type="text" className="bg-transparent outline-none border-b text-white" />
+              <label className="text-xs text-black/70 dark:text-white/70">Email</label>
+              <input type="text" className="bg-transparent outline-none border-b border-black text-black dark:text-white" />
             </div>
 
             <div className="flex flex-col my-3">
-              <label className="text-xs text-white/70">Messsage</label>
-              <textarea  className="bg-transparent outline-none border-b text-white" />
+              <label className="text-xs text-black/70 dark:text-white/70">Messsage</label>
+              <textarea  className="bg-transparent outline-none border-b border-black text-black dark:text-white" />
             </div>
 
             <button className="bg-[#740774] text-white px-5 py-2 font-medium rounded-xl">Send Message</button>
