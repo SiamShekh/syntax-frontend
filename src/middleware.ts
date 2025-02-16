@@ -12,7 +12,7 @@ export interface payloadUser {
 
 const path = {
     user: ["/dashboard"],
-    admin: ["/admin/:path*"],
+    admin: ["/admin", "/admin/product", "/admin/user"],
     auth: ["/register", "/login"]
 }
 
@@ -24,14 +24,15 @@ export async function middleware(request: NextRequest) {
         if (path.auth.includes(pathName)) {
             return NextResponse.next();
         } else {
-            return NextResponse.redirect(new URL('/login', request.url))
+            return NextResponse.redirect(new URL(`/login?redirect=${pathName}`, request.url))
         }
     }
 
     const decode: payloadUser = await jwtDecode(token as string);
 
     const accessPath = path[decode.role];
-
+    console.log(accessPath);
+    
     if (accessPath.includes(pathName)) {
         return NextResponse.next();
     }

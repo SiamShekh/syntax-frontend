@@ -4,13 +4,16 @@ import { loginUser } from "@/firebase/user/loginUser";
 import { user } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { FaGoogle, FaTelegramPlane } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { toast } from "sonner";
 
 function login() {
+    const searchParams = useSearchParams();
+    const redirectLink = searchParams.get('redirect');
+
     const { register, handleSubmit } = useForm<user>({
         defaultValues: {
             "email": "Siam62349@gmail.com",
@@ -28,7 +31,7 @@ function login() {
         if (res?.isSuccess) {
             toast.dismiss();
             toast.success(res.msg);
-            router.push('/dashboard');
+            router.push(redirectLink || '/dashboard');
         } else {
             toast.dismiss();
             toast.error(res?.msg);
@@ -77,10 +80,8 @@ function login() {
                             <input type="text" placeholder="Password" {...register("password")} className="outline-none bg-transparent border border-white/30 p-2 rounded-md w-full" />
                         </div>
                         <Link href={'#'} className="text-red-500 font-bold my-1 text-sm text-end">Forgot Password?</Link>
-                        <button className="px-6 py-2 border rounded-md mt-4 w-full capitalize flex items-center gap-2 justify-center">Login with google <FaGoogle /></button>
-                        <div className="divider my-5">OR</div>
                         <button type="submit" className="px-6 py-2 bg-white/10 rounded-md w-full">Login</button>
-                        
+
                         <div className="text-center mt-3">
                             <Link href={'/register'}>Don't have an account? <span className="font-medium text-red-500">Sign up</span></Link>
                         </div>

@@ -84,9 +84,7 @@ function register() {
                             <p className="text-xs font-medium my-2">Password</p>
                             <input type="text" placeholder="password" {...register("password")} className="outline-none bg-transparent border border-white/30 p-2 rounded-md w-full" />
                         </div>
-                        <button className="px-6 py-2 border rounded-md mt-4 w-full capitalize flex items-center gap-2 justify-center">Register with google <FaGoogle /></button>
-                        <div className="divider my-5">OR</div>
-                        <button type="submit" className="px-6 py-2 bg-white/10 rounded-md w-full">Register</button>
+                        <button type="submit" className="px-6 py-2 mt-3 bg-white/10 rounded-md w-full">Register</button>
                     </form>
                     <div className="text-center mt-3">
                         <Link href={'/login'}>Already have an account? <span className="font-medium text-red-500">Sign In</span></Link>

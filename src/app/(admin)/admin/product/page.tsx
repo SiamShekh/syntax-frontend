@@ -11,7 +11,7 @@ async function product() {
     const q = query(collections);
     const allProduct = await getDocs(q);
     const count = await getCountFromServer(collections);
-
+    
     return (
         <div className="w-full p-2">
             <div className="flex justify-between items-center w-full dark:bg-white/10 rounded-lg p-2">

@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 import { JWT_SECRECT } from "@/environment";
 import { cookies } from "next/headers";
 
-export async function loginUser({ email, password }: user) {
+export async function loginUser({ email, password }: Partial<user>) {
     try {
         const refCollection = collection(database, "user");
         const Query = query(refCollection, where("email", "==", email));
@@ -21,7 +21,7 @@ export async function loginUser({ email, password }: user) {
                         email: snap.data().email,
                         role: snap.data().role || "user"
                     }
-                    
+
                     const decode = jwt.sign(payload, JWT_SECRECT);
                     (await cookies()).set("token", decode);
 
