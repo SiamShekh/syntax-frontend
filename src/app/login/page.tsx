@@ -5,14 +5,15 @@ import { user } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { useForm } from "react-hook-form";
 import { FaGoogle, FaTelegramPlane } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { toast } from "sonner";
 
 function login() {
-    const searchParams = useSearchParams();
-    const redirectLink = searchParams.get('redirect');
+    // const searchParams = useSearchParams();
+    // const redirectLink = searchParams.get('redirect');
 
     const { register, handleSubmit } = useForm<user>({
         defaultValues: {
@@ -22,7 +23,8 @@ function login() {
     });
 
     const router = useRouter();
-
+    // console.log();
+    
     const HandleLogin = async (e: user) => {
         toast.dismiss();
         toast.loading("Loading");
@@ -31,7 +33,7 @@ function login() {
         if (res?.isSuccess) {
             toast.dismiss();
             toast.success(res.msg);
-            router.push(redirectLink || '/dashboard');
+            router.push(window.location.search.split("?redirect=")[1] || '/dashboard');
         } else {
             toast.dismiss();
             toast.error(res?.msg);

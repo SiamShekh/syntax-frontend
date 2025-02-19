@@ -3,16 +3,17 @@
 import { createContext, Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
 import { getCurrentUser } from "./getCurrentUser";
 import { payloadUser } from "@/middleware";
+import { JwtPayload } from "jwt-decode";
 
 interface val {
-    user: payloadUser | undefined
+    user: any
     loading: boolean
     setLoading: Dispatch<SetStateAction<boolean>>
 }
 
 export const SyntaxProvider = createContext<undefined | val>(undefined);
 function Context({ children }: { children: ReactNode }) {
-    const [user, setUser] = useState<payloadUser | undefined>(undefined);
+    const [user, setUser] = useState<JwtPayload | undefined>();
     const [loading, setLoading] = useState(true);
 
     const handleUser = async () => {

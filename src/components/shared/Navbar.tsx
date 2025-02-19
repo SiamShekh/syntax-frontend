@@ -58,10 +58,10 @@ const Navbar = () => {
                         ))
                     }
                     {
-                        val?.user?.id ?
+                        val?.user?.id as string ?
                             <button onClick={async()=>{
                                 await useLogout();
-                                val.setLoading(true);
+                                val?.setLoading(true);
                             }} className="font-medium bg-[#870D0D] text-white px-4 py-2 rounded-md flex items-center gap-2">
                                 <MdOutlineManageAccounts className="text-xl" /> Logout
                             </button> :
