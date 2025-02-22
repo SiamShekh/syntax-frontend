@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode } from "react";
-import { FaUser } from "react-icons/fa";
+import { FaStore, FaUser } from "react-icons/fa";
 import { IoIosMenu } from "react-icons/io";
-import { MdDashboard, MdProductionQuantityLimits, MdReviews } from "react-icons/md";
+import { IoAdd } from "react-icons/io5";
+import { MdDashboard} from "react-icons/md";
 
 function layout({ children }: { children: ReactNode }) {
     const pathName = usePathname();
@@ -22,13 +23,13 @@ function layout({ children }: { children: ReactNode }) {
         },
         {
             href: "/admin/product",
-            icon: <MdProductionQuantityLimits className="text-2xl" />,
+            icon: <FaStore className="text-2xl" />,
             title: "Product"
         },
         {
-            href: "/admin/review",
-            icon: <MdReviews className="text-2xl" />,
-            title: "Product"
+            href: "/admin/product/new",
+            icon: <IoAdd className="text-2xl" />,
+            title: "Add Product"
         },
     ]
 
@@ -36,7 +37,7 @@ function layout({ children }: { children: ReactNode }) {
         <div className="">
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-                <div className="drawer-content flex flex-col items-center">
+                <div className="drawer-content flex flex-col lg:p-3">
                     <div className="lg:hidden flex items-center gap-3 dark:bg-white/10 w-full h-16 px-3 mb-5">
                         <label htmlFor="my-drawer-2" className="lg:hidden text-4xl">
                             <IoIosMenu />

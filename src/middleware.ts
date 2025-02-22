@@ -11,8 +11,8 @@ export interface payloadUser {
 }
 
 const path = {
-    user: ["/dashboard"],
-    admin: ["/admin", "/admin/product", "/admin/user"],
+    user: ["dashboard"],
+    admin: ["admin"], //, "/admin/product", "/admin/product/new","/admin/user"
     auth: ["/register", "/login"]
 }
 
@@ -31,9 +31,10 @@ export async function middleware(request: NextRequest) {
     const decode: payloadUser = await jwtDecode(token as string);
 
     const accessPath = path[decode.role];
-    console.log(accessPath);
     
-    if (accessPath.includes(pathName)) {
+    const paths = pathName.split('/')[1];
+    
+    if (accessPath.includes(paths)) {
         return NextResponse.next();
     }
 

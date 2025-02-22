@@ -12,9 +12,6 @@ import { FaXTwitter } from "react-icons/fa6";
 import { toast } from "sonner";
 
 function login() {
-    // const searchParams = useSearchParams();
-    // const redirectLink = searchParams.get('redirect');
-
     const { register, handleSubmit } = useForm<user>({
         defaultValues: {
             "email": "Siam62349@gmail.com",
@@ -24,7 +21,7 @@ function login() {
 
     const router = useRouter();
     // console.log();
-    
+
     const HandleLogin = async (e: user) => {
         toast.dismiss();
         toast.loading("Loading");
@@ -33,7 +30,7 @@ function login() {
         if (res?.isSuccess) {
             toast.dismiss();
             toast.success(res.msg);
-            router.push(window.location.search.split("?redirect=")[1] || '/dashboard');
+            router.push('/dashboard');
         } else {
             toast.dismiss();
             toast.error(res?.msg);
