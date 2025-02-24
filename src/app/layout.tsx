@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} antialiased`}
       >
-        <div>
+        <div data-theme="black">
           <Toaster />
           <Context>
             {children}

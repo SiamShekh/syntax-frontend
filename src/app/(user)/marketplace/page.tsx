@@ -12,15 +12,15 @@ async function marketplace() {
             <div className="grid lg:grid-cols-3 md:grid-cols-3 gap-3">
                 {
                     product.docs.map((product, i) => (
-                        <div className="dark:bg-white/10 bg-black/10 rounded-xl border border-white/10" key={i}>
+                        <div className="bg-white/10  rounded-xl border border-white/10" key={i}>
                             <div className="">
                                 <Image draggable={false} src={product.data().thumbnail} width={800} height={80} alt={product.data().title} className="h-48 lg:h-56 rounded-xl" />
                                 <div className="p-2">
                                     <div className="mb-3">
-                                        <p className="font-medium text-black dark:text-white line-clamp-1">{product.data().title}</p>
-                                        <p className="dark:text-white/60 text-black/60 text-xs">by {product.data().publisher}</p>
+                                        <p className="font-medium text-white line-clamp-1">{product.data().title}</p>
+                                        <p className="text-white/60 text-xs">by {product.data().publisher}</p>
                                     </div>
-                                    <p className="text-black dark:text-white font-medium">${product.data().price}</p>
+                                    <p className=" text-white font-medium">${product.data().price}</p>
                                     <div className="flex justify-between items-center">
                                         <div className="">
                                             <div className="flex items-center gap-2">
